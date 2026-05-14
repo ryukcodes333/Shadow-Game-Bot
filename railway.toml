@@ -1,0 +1,7 @@
+[build]
+builder = "nixpacks"
+buildCommand = "npm install -g pnpm@latest && pnpm install && PORT=3000 BASE_PATH=/ pnpm --filter @workspace/shadow-garden run build"
+
+[deploy]
+startCommand = "pnpm --filter @workspace/shadow-garden run serve"
+restartPolicyType = "on_failure"
