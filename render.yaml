@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: shadow-garden
+    env: static
+    buildCommand: npm install -g pnpm@latest && pnpm install && PORT=3000 BASE_PATH=/ pnpm --filter @workspace/shadow-garden run build
+    staticPublishPath: artifacts/shadow-garden/dist/public
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://e20f9c84-2346-4266-841a-c204114bf10a-00-3ij93v2fqrbed.picard.replit.dev
